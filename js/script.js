@@ -6,16 +6,36 @@ var quiz = [
 
 var score = 0;
 
-for (var i=0, max=quiz.length; i<max; i++) {
-	// get answer from user
-	var answer = prompt(quiz[i] [0])
-	//check if answer is correct
-	if(answer === quiz[i] [1]) {
-		alert("Correct!");
-		score++;
-	} else {
-		alert("Sorry, that is incorrect. BLNT");
+play(quiz);
+
+function play(quiz) {
+	// main game loop
+	for(var i=0, question, answer, max=quiz.length; i<max; i++) {
+		question = quiz[i] [0];
+		answer = ask(question);
+		check(answer);
+	}
+	//end of game main loop
+	gameOver();
+
+	function ask(question) {
+		return prompt(question); //quiz [i] [0] is th ith question
+	}
+
+	function check(answer) {
+		if(answer === quiz[i][1]) {
+			alert("Correct!");
+			// increase score by 1
+			score++;
+		} else {
+			alert("Sorry, that is incorrect");
+		}
+	}
+
+	function gameOver(){
+		// inform the player that the game has finished and tell them their score
+		alert("Game Over. Your score is " + score + " points");
 	}
 }
 
-alert("Game Over. You scored " + score + " points");
+
