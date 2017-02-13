@@ -1,4 +1,4 @@
-* {
+body {
 	margin: 0;
 	padding: 0;
 }
@@ -7,4 +7,8 @@ header {
 	background: #333;
 	color: #c00;
 	text-transform: uppercase;
+}
+h1 {
+	font-size: 1em;
+	text-align: center;
 }
